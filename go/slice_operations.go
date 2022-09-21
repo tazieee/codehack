@@ -11,10 +11,17 @@ func main() {
 	fmt.Println("input2:")
 	fmt.Println(input2)
 
-	// operations
-	a := input1[3:6]
-	fmt.Println(a)
-	a[0] = 123
-	fmt.Println(a)
-	fmt.Println(input1)
+	// len and cap
+	// len <= cap
+	s1 := make([]int, 5)
+	fmt.Printf("len: %d cap: %d value: %v\n", len(s1), cap(s1), s1)
+
+	s2 := make([]int, 0, 5)
+	fmt.Printf("len: %d cap: %d value: %v\n", len(s2), cap(s2), s2)
+
+	s3 := append(s1, 7)
+	fmt.Printf("len: %d cap: %d value: %v\n", len(s3), cap(s3), s3)
+
+	s4 := append(s1, s2...)
+	fmt.Printf("len: %d cap: %d value: %v\n", len(s4), cap(s4), s4)
 }
